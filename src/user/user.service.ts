@@ -15,6 +15,7 @@ export class UserService {
         lname: registerUserDto.lname,
         email: registerUserDto.email,
         password: registerUserDto.password,
+        ...(registerUserDto.role && { role: registerUserDto.role }),
       });
     } catch (err: unknown) {
       const e = err as { code?: number };
